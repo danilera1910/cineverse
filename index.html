@@ -1,6 +1,310 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Cineverse — catálogo de filmes."><title>Cineverse | Catálogo de Filmes</title><link rel="stylesheet" href="css/style.css"></head><body>
-<header class="header"><a href="index.html" class="logo">CINEVERSE</a><nav class="nav"><a href="#inicio">Início</a><a href="#filmes">Filmes</a><a href="#generos">Gêneros</a></nav><div class="search"><input id="searchInput" type="text" placeholder="Pesquisar filme..." autocomplete="off"><button id="searchButton" aria-label="Pesquisar">⌕</button></div></header>
-<main><section class="hero" id="inicio"><div class="hero-content"><span class="featured">FILME EM DESTAQUE</span><h1>Interestelar</h1><div class="hero-info"><span>2014</span><span>★ 8.7</span><span>Ficção Científica</span></div><p>Uma equipe de exploradores atravessa um buraco de minhoca em busca de um novo lar para a humanidade.</p><a href="filmes/interestelar.html" class="primary-button">Ver detalhes</a></div></section>
-<section class="section" id="filmes"><div class="section-title"><div><span class="subtitle">EXPLORE</span><h2>Filmes</h2></div><select id="genreFilter"><option value="Todos">Todos os gêneros</option><option>Ação</option><option>Romance</option><option>Ficção Científica</option><option>Terror</option><option>Animação</option><option>Comédia</option></select></div><p id="resultMessage" class="result-message"></p><div id="movieGrid" class="movie-grid"></div></section>
-<section class="section genres-section" id="generos"><span class="subtitle">DESCUBRA</span><h2>Explore por gênero</h2><div class="genres"><button data-genre="Ação">Ação</button><button data-genre="Romance">Romance</button><button data-genre="Ficção Científica">Ficção Científica</button><button data-genre="Terror">Terror</button><button data-genre="Animação">Animação</button><button data-genre="Comédia">Comédia</button></div></section></main>
-<footer><div class="footer-logo">CINEVERSE</div><p>Explore novos filmes e encontre sua próxima história.</p><span>© 2026 Cineverse</span></footer><script src="js/script.js"></script></body></html>
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Cineverse — catálogo de filmes."
+    >
+
+    <title>Cineverse | Catálogo de Filmes</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            CINEVERSE
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#filmes">
+                Filmes
+            </a>
+
+            <a href="#generos">
+                Gêneros
+            </a>
+
+        </nav>
+
+
+        <!-- PESQUISA -->
+
+        <div class="search">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Pesquisar filme..."
+                autocomplete="off"
+            >
+
+            <button
+                id="searchButton"
+                aria-label="Pesquisar"
+            >
+                ⌕
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+             HERO / DESTAQUE
+        ========================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-content">
+
+                <span class="featured">
+                    FILME EM DESTAQUE
+                </span>
+
+
+                <h1>
+                    Interestelar
+                </h1>
+
+
+                <div class="hero-info">
+
+                    <span>
+                        2014
+                    </span>
+
+                    <span>
+                        ★ 8.7
+                    </span>
+
+                    <span>
+                        Ficção Científica
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Uma equipe de exploradores atravessa um buraco
+                    de minhoca em busca de um novo lar para a humanidade.
+                </p>
+
+
+                <a
+                    href="filmes/interestelar.html"
+                    class="primary-button"
+                >
+                    Ver detalhes
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATÁLOGO DE FILMES
+        ========================== -->
+
+        <section
+            class="section"
+            id="filmes"
+        >
+
+            <div class="section-title">
+
+
+                <!-- TÍTULO -->
+
+                <div>
+
+                    <span class="subtitle">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Filmes
+                    </h2>
+
+                </div>
+
+
+                <!-- FILTRO DE GÊNERO -->
+
+                <select id="genreFilter">
+
+                    <option value="Todos">
+                        Todos os gêneros
+                    </option>
+
+                    <option value="Ação">
+                        Ação
+                    </option>
+
+                    <option value="Romance">
+                        Romance
+                    </option>
+
+                    <option value="Ficção Científica">
+                        Ficção Científica
+                    </option>
+
+                    <option value="Terror">
+                        Terror
+                    </option>
+
+                    <option value="Animação">
+                        Animação
+                    </option>
+
+                    <option value="Comédia">
+                        Comédia
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MENSAGEM DA PESQUISA -->
+
+            <p
+                id="resultMessage"
+                class="result-message"
+            ></p>
+
+
+            <!-- FILMES GERADOS PELO JAVASCRIPT -->
+
+            <div
+                id="movieGrid"
+                class="movie-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =========================
+             GÊNEROS
+        ========================== -->
+
+        <section
+            class="section genres-section"
+            id="generos"
+        >
+
+            <span class="subtitle">
+                DESCUBRA
+            </span>
+
+
+            <h2>
+                Explore por gênero
+            </h2>
+
+
+            <div class="genres">
+
+
+                <button data-genre="Ação">
+                    Ação
+                </button>
+
+
+                <button data-genre="Romance">
+                    Romance
+                </button>
+
+
+                <button data-genre="Ficção Científica">
+                    Ficção Científica
+                </button>
+
+
+                <button data-genre="Terror">
+                    Terror
+                </button>
+
+
+                <button data-genre="Animação">
+                    Animação
+                </button>
+
+
+                <button data-genre="Comédia">
+                    Comédia
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            CINEVERSE
+        </div>
+
+
+        <p>
+            Explore novos filmes e encontre sua próxima história.
+        </p>
+
+
+        <span>
+            © 2026 Cineverse
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
+```
