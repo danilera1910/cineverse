@@ -1,251 +1,170 @@
-const movies = [
-    {
-        id: "interestelar",
-        title: "Interestelar",
-        year: 2014,
-        genre: "Ficção Científica",
-        rating: 8.7,
-        image: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-        link: "filmes/interestelar.html"
-    },
-    {
-        id: "avatar",
-        title: "Avatar",
-        year: 2009,
-        genre: "Ficção Científica",
-        rating: 7.9,
-        image: "https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg",
-        link: "filmes/avatar.html"
-    },
-    {
-        id: "planeta-dos-macacos",
-        title: "Planeta dos Macacos",
-        year: 1968,
-        genre: "Ficção Científica",
-        rating: 8.0,
-        image: "https://image.tmdb.org/t/p/w500/2r9iK1b7D9L1Gq2G8K5W0F5Vx1.jpg",
-        link: "filmes/planeta-dos-macacos.html"
-    },
-    {
-        id: "vingadores-ultimato",
-        title: "Vingadores: Ultimato",
-        year: 2019,
-        genre: "Ação",
-        rating: 8.4,
-        image: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-        link: "filmes/vingadores-ultimato.html"
-    },
-    {
-        id: "batman",
-        title: "Batman: O Cavaleiro das Trevas",
-        year: 2008,
-        genre: "Ação",
-        rating: 9.0,
-        image: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-        link: "filmes/batman.html"
-    },
-    {
-        id: "homem-aranha",
-        title: "O Espetacular Homem-Aranha",
-        year: 2012,
-        genre: "Ação",
-        rating: 6.9,
-        image: "https://image.tmdb.org/t/p/w500/jexoNYnqfYSXkx2fB2R7Zf8M6K.jpg",
-        link: "filmes/homem-aranha.html"
-    },
-    {
-        id: "para-todos-os-garotos",
-        title: "Para Todos os Garotos que Já Amei",
-        year: 2018,
-        genre: "Romance",
-        rating: 7.0,
-        image: "https://image.tmdb.org/t/p/w500/hKHZhUbIyUAjcSrqJThFGYIR6kI.jpg",
-        link: "filmes/para-todos-os-garotos.html"
-    },
-    {
-        id: "diario-de-uma-paixao",
-        title: "Diário de uma Paixão",
-        year: 2004,
-        genre: "Romance",
-        rating: 7.8,
-        image: "https://image.tmdb.org/t/p/w500/rNzQ7Z2Kx7J1J9W8x3q1H4Q9Z7.jpg",
-        link: "filmes/diario-de-uma-paixao.html"
-    },
-    {
-        id: "50-first-dates",
-        title: "Como Se Fosse a Primeira Vez",
-        year: 2004,
-        genre: "Romance",
-        rating: 6.8,
-        image: "https://image.tmdb.org/t/p/w500/lQ2xk8dX4N0qT3j6H8M1B5Y7P9.jpg",
-        link: "filmes/50-first-dates.html"
-    },
-    {
-        id: "entidade",
-        title: "A Entidade",
-        year: 2012,
-        genre: "Terror",
-        rating: 6.8,
-        image: "https://image.tmdb.org/t/p/w500/n0u7P9M7H1E8Q6V4L3X2C5Z8K9.jpg",
-        link: "filmes/entidade.html"
-    },
-    {
-        id: "invocacao-do-mal",
-        title: "Invocação do Mal",
-        year: 2013,
-        genre: "Terror",
-        rating: 7.5,
-        image: "https://image.tmdb.org/t/p/w500/wVYREutTvI2tm3B9k3N3qXJ8Q8.jpg",
-        link: "filmes/invocacao-do-mal.html"
-    },
-    {
-        id: "corra",
-        title: "Corra!",
-        year: 2017,
-        genre: "Terror",
-        rating: 7.6,
-        image: "https://image.tmdb.org/t/p/w500/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
-        link: "filmes/corra.html"
-    },
-    {
-        id: "ratatouille",
-        title: "Ratatouille",
-        year: 2007,
-        genre: "Animação",
-        rating: 8.1,
-        image: "https://image.tmdb.org/t/p/w500/npH0nV9L5V4v7J5V8Z1M8C8D9.jpg",
-        link: "filmes/ratatouille.html"
-    },
-    {
-        id: "toy-story-3",
-        title: "Toy Story 3",
-        year: 2010,
-        genre: "Animação",
-        rating: 8.3,
-        image: "https://image.tmdb.org/t/p/w500/AbbXSPaH7N5L6xQ3qJ1B9X8Z2.jpg",
-        link: "filmes/toy-story-3.html"
-    },
-    {
-        id: "enrolados",
-        title: "Enrolados",
-        year: 2010,
-        genre: "Animação",
-        rating: 7.7,
-        image: "https://image.tmdb.org/t/p/w500/ym7p4mQ5M8L3K2N7X9B4C6D1E.jpg",
-        link: "filmes/enrolados.html"
-    },
-    {
-        id: "shrek",
-        title: "Shrek",
-        year: 2001,
-        genre: "Comédia",
-        rating: 7.9,
-        image: "https://image.tmdb.org/t/p/w500/dyHAK9X7m3N8P4Q5R1T6V2B0C.jpg",
-        link: "filmes/shrek.html"
-    },
-    {
-        id: "lobo-de-wall-street",
-        title: "O Lobo de Wall Street",
-        year: 2013,
-        genre: "Comédia",
-        rating: 8.2,
-        image: "https://image.tmdb.org/t/p/w500/pWHf4khOlo99nT8E1p1M8byY.jpg",
-        link: "filmes/lobo-de-wall-street.html"
-    },
-    {
-        id: "up",
-        title: "Up: Altas Aventuras",
-        year: 2009,
-        genre: "Comédia",
-        rating: 8.3,
-        image: "https://image.tmdb.org/t/p/w500/mFvoEwSfLqbcWwFsDjQebn9bz.jpg",
-        link: "filmes/up.html"
-    }
+const movies=[
+  {
+    "id": "interestelar",
+    "title": "Interestelar",
+    "year": 2014,
+    "genre": "Ficção Científica",
+    "rating": 8.7,
+    "image": "imagens/interestelar.png",
+    "link": "filmes/interestelar.html"
+  },
+  {
+    "id": "avatar",
+    "title": "Avatar",
+    "year": 2009,
+    "genre": "Ficção Científica",
+    "rating": 7.8,
+    "image": "imagens/avatar.png",
+    "link": "filmes/avatar.html"
+  },
+  {
+    "id": "planeta-dos-macacos",
+    "title": "Planeta dos Macacos",
+    "year": 2011,
+    "genre": "Ficção Científica",
+    "rating": 7.6,
+    "image": "imagens/planeta-dos-macacos.png",
+    "link": "filmes/planeta-dos-macacos.html"
+  },
+  {
+    "id": "vingadores-ultimato",
+    "title": "Vingadores: Ultimato",
+    "year": 2019,
+    "genre": "Ação",
+    "rating": 8.4,
+    "image": "imagens/vingadores-ultimato.png",
+    "link": "filmes/vingadores-ultimato.html"
+  },
+  {
+    "id": "batman",
+    "title": "Batman: O Cavaleiro das Trevas",
+    "year": 2008,
+    "genre": "Ação",
+    "rating": 9.0,
+    "image": "imagens/batman.png",
+    "link": "filmes/batman.html"
+  },
+  {
+    "id": "homem-aranha",
+    "title": "O Espetacular Homem-Aranha",
+    "year": 2012,
+    "genre": "Ação",
+    "rating": 6.9,
+    "image": "imagens/homem-aranha.png",
+    "link": "filmes/homem-aranha.html"
+  },
+  {
+    "id": "para-todos-os-garotos",
+    "title": "Para Todos os Garotos que Já Amei",
+    "year": 2018,
+    "genre": "Romance",
+    "rating": 7.0,
+    "image": "imagens/para-todos-os-garotos.png",
+    "link": "filmes/para-todos-os-garotos.html"
+  },
+  {
+    "id": "diario-de-uma-paixao",
+    "title": "Diário de uma Paixão",
+    "year": 2004,
+    "genre": "Romance",
+    "rating": 7.8,
+    "image": "imagens/diario-de-uma-paixao.png",
+    "link": "filmes/diario-de-uma-paixao.html"
+  },
+  {
+    "id": "50-first-dates",
+    "title": "Como Se Fosse a Primeira Vez",
+    "year": 2004,
+    "genre": "Romance",
+    "rating": 6.8,
+    "image": "imagens/50-first-dates.png",
+    "link": "filmes/50-first-dates.html"
+  },
+  {
+    "id": "entidade",
+    "title": "A Entidade",
+    "year": 2012,
+    "genre": "Terror",
+    "rating": 6.8,
+    "image": "imagens/entidade.png",
+    "link": "filmes/entidade.html"
+  },
+  {
+    "id": "invocacao-do-mal",
+    "title": "Invocação do Mal",
+    "year": 2013,
+    "genre": "Terror",
+    "rating": 7.5,
+    "image": "imagens/invocacao-do-mal.png",
+    "link": "filmes/invocacao-do-mal.html"
+  },
+  {
+    "id": "corra",
+    "title": "Corra!",
+    "year": 2017,
+    "genre": "Terror",
+    "rating": 7.7,
+    "image": "imagens/corra.png",
+    "link": "filmes/corra.html"
+  },
+  {
+    "id": "ratatouille",
+    "title": "Ratatouille",
+    "year": 2007,
+    "genre": "Animação",
+    "rating": 8.1,
+    "image": "imagens/ratatouille.png",
+    "link": "filmes/ratatouille.html"
+  },
+  {
+    "id": "toy-story-3",
+    "title": "Toy Story 3",
+    "year": 2010,
+    "genre": "Animação",
+    "rating": 8.3,
+    "image": "imagens/toy-story-3.png",
+    "link": "filmes/toy-story-3.html"
+  },
+  {
+    "id": "enrolados",
+    "title": "Enrolados",
+    "year": 2010,
+    "genre": "Animação",
+    "rating": 7.7,
+    "image": "imagens/enrolados.png",
+    "link": "filmes/enrolados.html"
+  },
+  {
+    "id": "shrek",
+    "title": "Shrek",
+    "year": 2001,
+    "genre": "Comédia",
+    "rating": 7.9,
+    "image": "imagens/shrek.png",
+    "link": "filmes/shrek.html"
+  },
+  {
+    "id": "lobo-de-wall-street",
+    "title": "O Lobo de Wall Street",
+    "year": 2013,
+    "genre": "Comédia",
+    "rating": 8.2,
+    "image": "imagens/lobo-de-wall-street.png",
+    "link": "filmes/lobo-de-wall-street.html"
+  },
+  {
+    "id": "up",
+    "title": "Up: Altas Aventuras",
+    "year": 2009,
+    "genre": "Comédia",
+    "rating": 8.3,
+    "image": "imagens/up.png",
+    "link": "filmes/up.html"
+  }
 ];
 
-const movieGrid = document.getElementById("movieGrid");
-const genreSelect = document.getElementById("genreFilter");
-const genreButtons = document.querySelectorAll(".genres button");
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-
-
-function displayMovies(movieList) {
-
-    movieGrid.innerHTML = "";
-
-    if (movieList.length === 0) {
-        movieGrid.innerHTML = `
-            <p class="no-results">
-                Nenhum filme encontrado.
-            </p>
-        `;
-        return;
-    }
-
-    movieList.forEach(movie => {
-
-        const card = document.createElement("a");
-        card.classList.add("movie-card");
-        card.href = movie.link;
-
-        card.innerHTML = `
-            <img src="${movie.image}" alt="${movie.title}">
-            <div class="movie-info">
-                <h3>${movie.title}</h3>
-                <div class="movie-meta">
-                    <span>${movie.year}</span>
-                    <span>★ ${movie.rating}</span>
-                </div>
-                <span class="movie-genre">${movie.genre}</span>
-            </div>
-        `;
-
-        movieGrid.appendChild(card);
-    });
-}
-
-
-function filterMovies() {
-
-    const search = searchInput.value.toLowerCase().trim();
-    const genre = genreSelect.value;
-
-    const filteredMovies = movies.filter(movie => {
-        const matchesSearch = movie.title.toLowerCase().includes(search);
-        const matchesGenre = genre === "Todos" || movie.genre === genre;
-        return matchesSearch && matchesGenre;
-    });
-
-    displayMovies(filteredMovies);
-}
-
-
-// Chamada pelos botões de gênero (onclick="filterGenre('Ação')" no HTML)
-function filterGenre(genre) {
-
-    genreSelect.value = genre;
-    filterMovies();
-
-    genreButtons.forEach(button => {
-        button.classList.toggle("active", button.textContent.trim() === genre);
-    });
-}
-
-
-genreSelect.addEventListener("change", () => {
-    filterMovies();
-    genreButtons.forEach(button => {
-        button.classList.toggle("active", button.textContent.trim() === genreSelect.value);
-    });
-});
-
-searchButton.addEventListener("click", filterMovies);
-
-searchInput.addEventListener("keyup", event => {
-    if (event.key === "Enter") {
-        filterMovies();
-    }
-});
-
-displayMovies(movies);
+const grid=document.getElementById("movieGrid"),input=document.getElementById("searchInput"),button=document.getElementById("searchButton"),select=document.getElementById("genreFilter"),message=document.getElementById("resultMessage");
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+function render(list){if(!grid)return;grid.innerHTML=list.length?list.map(m=>`<article class="movie-card"><a href="${m.link}"><div class="movie-poster"><img src="${m.image}" alt="Capa de ${m.title}" loading="lazy"><span class="rating">★ ${m.rating}</span></div><div class="movie-info"><h3>${m.title}</h3><div class="movie-meta"><span>${m.year}</span><span>${m.genre}</span></div></div></a></article>`).join(""): '<div class="empty-state">Nenhum filme encontrado.</div>';}
+function filter(){if(!grid)return;const q=norm(input?.value||""),g=select?.value||"Todos";const list=movies.filter(m=>(norm(m.title).includes(q)||norm(m.genre).includes(q))&&(g==="Todos"||m.genre===g));render(list);if(message)message.textContent=q?`${list.length} filme(s) encontrado(s) para "${input.value}".`:g!=="Todos"?`${list.length} filme(s) em ${g}.`:"";}
+input?.addEventListener("input",filter);select?.addEventListener("change",filter);button?.addEventListener("click",()=>{if(grid)filter();else window.location.href=`../index.html?busca=${encodeURIComponent(input.value.trim())}`});input?.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();button.click()}});document.querySelectorAll("[data-genre]").forEach(b=>b.addEventListener("click",()=>{select.value=b.dataset.genre;filter();document.getElementById("filmes")?.scrollIntoView({behavior:"smooth"})}));if(grid){const p=new URLSearchParams(location.search).get("busca");if(p)input.value=p;filter();}
