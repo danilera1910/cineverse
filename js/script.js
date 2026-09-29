@@ -26,7 +26,6 @@ const movies = [
         image: "https://image.tmdb.org/t/p/w500/2r9iK1b7D9L1Gq2G8K5W0F5Vx1.jpg",
         link: "filmes/planeta-dos-macacos.html"
     },
-
     {
         id: "vingadores-ultimato",
         title: "Vingadores: Ultimato",
@@ -54,7 +53,6 @@ const movies = [
         image: "https://image.tmdb.org/t/p/w500/jexoNYnqfYSXkx2fB2R7Zf8M6K.jpg",
         link: "filmes/homem-aranha.html"
     },
-
     {
         id: "para-todos-os-garotos",
         title: "Para Todos os Garotos que Já Amei",
@@ -82,7 +80,6 @@ const movies = [
         image: "https://image.tmdb.org/t/p/w500/lQ2xk8dX4N0qT3j6H8M1B5Y7P9.jpg",
         link: "filmes/50-first-dates.html"
     },
-
     {
         id: "entidade",
         title: "A Entidade",
@@ -110,7 +107,6 @@ const movies = [
         image: "https://image.tmdb.org/t/p/w500/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
         link: "filmes/corra.html"
     },
-
     {
         id: "ratatouille",
         title: "Ratatouille",
@@ -138,7 +134,6 @@ const movies = [
         image: "https://image.tmdb.org/t/p/w500/ym7p4mQ5M8L3K2N7X9B4C6D1E.jpg",
         link: "filmes/enrolados.html"
     },
-
     {
         id: "shrek",
         title: "Shrek",
@@ -169,8 +164,8 @@ const movies = [
 ];
 
 const movieGrid = document.getElementById("movieGrid");
-const genreSelect = document.getElementById("genreSelect");
-const genreButtons = document.querySelectorAll(".genre-btn");
+const genreSelect = document.getElementById("genreFilter");
+const genreButtons = document.querySelectorAll(".genres button");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 
@@ -191,27 +186,18 @@ function displayMovies(movieList) {
     movieList.forEach(movie => {
 
         const card = document.createElement("a");
-
         card.classList.add("movie-card");
-
         card.href = movie.link;
 
         card.innerHTML = `
             <img src="${movie.image}" alt="${movie.title}">
-
             <div class="movie-info">
-
                 <h3>${movie.title}</h3>
-
                 <div class="movie-meta">
                     <span>${movie.year}</span>
                     <span>★ ${movie.rating}</span>
                 </div>
-
-                <span class="movie-genre">
-                    ${movie.genre}
-                </span>
-
+                <span class="movie-genre">${movie.genre}</span>
             </div>
         `;
 
@@ -223,18 +209,11 @@ function displayMovies(movieList) {
 function filterMovies() {
 
     const search = searchInput.value.toLowerCase().trim();
-
     const genre = genreSelect.value;
 
     const filteredMovies = movies.filter(movie => {
-
-        const matchesSearch =
-            movie.title.toLowerCase().includes(search);
-
-        const matchesGenre =
-            genre === "Todos" ||
-            movie.genre === genre;
-
+        const matchesSearch = movie.title.toLowerCase().includes(search);
+        const matchesGenre = genre === "Todos" || movie.genre === genre;
         return matchesSearch && matchesGenre;
     });
 
@@ -242,40 +221,31 @@ function filterMovies() {
 }
 
 
-genreSelect.addEventListener("change", filterMovies);
+// Chamada pelos botões de gênero (onclick="filterGenre('Ação')" no HTML)
+function filterGenre(genre) {
 
+    genreSelect.value = genre;
+    filterMovies();
 
-genreButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const genre = button.dataset.genre;
-
-        genreSelect.value = genre;
-
-        filterMovies();
-
-        genreButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
+    genreButtons.forEach(button => {
+        button.classList.toggle("active", button.textContent.trim() === genre);
     });
+}
 
+
+genreSelect.addEventListener("change", () => {
+    filterMovies();
+    genreButtons.forEach(button => {
+        button.classList.toggle("active", button.textContent.trim() === genreSelect.value);
+    });
 });
-
 
 searchButton.addEventListener("click", filterMovies);
 
-
 searchInput.addEventListener("keyup", event => {
-
     if (event.key === "Enter") {
         filterMovies();
     }
-
 });
-
 
 displayMovies(movies);
