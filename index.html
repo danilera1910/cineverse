@@ -1,44 +1,72 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cineverse | Filmes</title>
+    <title>Cineverse | Seu catálogo de filmes</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-    <!-- MENU -->
+
+    <!-- =========================
+         MENU
+    ========================== -->
 
     <header class="header">
 
-        <div class="logo">
-            <span>🎬</span> CINEVERSE
-        </div>
+        <a href="index.html" class="logo">
+            CINEVERSE
+        </a>
+
 
         <nav class="nav">
-            <a href="#inicio">Início</a>
-            <a href="#filmes">Filmes</a>
-            <a href="#generos">Gêneros</a>
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#filmes">
+                Filmes
+            </a>
+
+            <a href="#generos">
+                Gêneros
+            </a>
+
         </nav>
 
+
         <div class="search">
-            <input 
-                type="text" 
-                id="searchInput" 
+
+            <input
+                type="text"
+                id="searchInput"
                 placeholder="Pesquisar filme..."
             >
-            <button id="searchButton">🔍</button>
+
+            <button id="searchButton">
+                🔍
+            </button>
+
         </div>
 
     </header>
 
 
-    <!-- HERO -->
+
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <main>
 
@@ -46,95 +74,174 @@
 
             <div class="hero-content">
 
-                <span class="featured">FILME EM DESTAQUE</span>
+                <span class="featured">
+                    FILME EM DESTAQUE
+                </span>
 
-                <h1>Interestelar</h1>
+
+                <h1>
+                    Interestelar
+                </h1>
+
 
                 <div class="hero-info">
-                    <span>2014</span>
-                    <span>⭐ 8.7</span>
-                    <span>Ficção Científica</span>
+
+                    <span>
+                        2014
+                    </span>
+
+                    <span>
+                        ⭐ 8.7
+                    </span>
+
+                    <span>
+                        Ficção Científica
+                    </span>
+
                 </div>
 
+
                 <p>
-                    Quando a Terra se torna inabitável, um grupo de
-                    exploradores parte em uma missão espacial para
-                    encontrar um novo lar para a humanidade.
+
+                    Quando a Terra se torna inabitável,
+                    um grupo de exploradores parte em
+                    uma missão espacial em busca de um
+                    novo lar para a humanidade.
+
                 </p>
 
-                <button class="primary-button" onclick="openMovie(1)">
+
+                <a
+                    href="filmes/interestelar.html"
+                    class="primary-button"
+                >
                     Ver detalhes
-                </button>
+                </a>
 
             </div>
 
         </section>
 
 
-        <!-- FILMES -->
 
-        <section class="section" id="filmes">
+        <!-- =========================
+             FILMES
+        ========================== -->
+
+        <section
+            class="section"
+            id="filmes"
+        >
 
             <div class="section-title">
 
                 <div>
-                    <span class="subtitle">EXPLORE</span>
-                    <h2>Filmes em destaque</h2>
+
+                    <span class="subtitle">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Filmes
+                    </h2>
+
                 </div>
+
 
                 <select id="genreFilter">
 
-                    <option value="Todos">Todos os gêneros</option>
-                    <option value="Ação">Ação</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Terror">Terror</option>
-                    <option value="Comédia">Comédia</option>
-                    <option value="Animação">Animação</option>
+                    <option value="Todos">
+                        Todos os gêneros
+                    </option>
+
+                    <option value="Ação">
+                        Ação
+                    </option>
+
+                    <option value="Romance">
+                        Romance
+                    </option>
+
+                    <option value="Ficção Científica">
+                        Ficção Científica
+                    </option>
+
+                    <option value="Terror">
+                        Terror
+                    </option>
+
+                    <option value="Animação">
+                        Animação
+                    </option>
+
+                    <option value="Comédia">
+                        Comédia
+                    </option>
 
                 </select>
 
             </div>
 
-            <div id="movieGrid" class="movie-grid">
-                <!-- Os filmes serão inseridos pelo JavaScript -->
+
+            <div
+                id="movieGrid"
+                class="movie-grid"
+            >
+
+                <!--
+                    Os filmes serão
+                    carregados pelo JavaScript.
+                -->
+
             </div>
 
         </section>
 
 
-        <!-- GÊNEROS -->
 
-        <section class="section genres-section" id="generos">
+        <!-- =========================
+             GÊNEROS
+        ========================== -->
 
-            <span class="subtitle">DESCUBRA</span>
+        <section
+            class="section genres-section"
+            id="generos"
+        >
 
-            <h2>Explore por gênero</h2>
+            <span class="subtitle">
+                DESCUBRA
+            </span>
+
+
+            <h2>
+                Explore por gênero
+            </h2>
+
 
             <div class="genres">
 
                 <button onclick="filterGenre('Ação')">
-                    💥 Ação
+                    Ação
                 </button>
 
-                <button onclick="filterGenre('Drama')">
-                    🎭 Drama
+                <button onclick="filterGenre('Romance')">
+                    Romance
                 </button>
 
                 <button onclick="filterGenre('Ficção Científica')">
-                    🚀 Ficção Científica
+                    Ficção Científica
                 </button>
 
                 <button onclick="filterGenre('Terror')">
-                    👻 Terror
-                </button>
-
-                <button onclick="filterGenre('Comédia')">
-                    😂 Comédia
+                    Terror
                 </button>
 
                 <button onclick="filterGenre('Animação')">
-                    🎨 Animação
+                    Animação
+                </button>
+
+                <button onclick="filterGenre('Comédia')">
+                    Comédia
                 </button>
 
             </div>
@@ -144,67 +251,29 @@
     </main>
 
 
-    <!-- MODAL DO FILME -->
 
-    <div id="movieModal" class="modal">
-
-        <div class="modal-content">
-
-            <button class="close-button" onclick="closeMovie()">
-                ×
-            </button>
-
-            <img id="modalImage" src="" alt="">
-
-            <div class="modal-info">
-
-                <span id="modalGenre" class="movie-genre"></span>
-
-                <h2 id="modalTitle"></h2>
-
-                <div class="modal-details">
-
-                    <span id="modalYear"></span>
-
-                    <span id="modalRating"></span>
-
-                </div>
-
-                <p id="modalDescription"></p>
-
-                <p>
-                    <strong>Diretor:</strong>
-                    <span id="modalDirector"></span>
-                </p>
-
-                <h3>Filmes semelhantes</h3>
-
-                <div id="similarMovies" class="similar-movies"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
         <div class="footer-logo">
-            🎬 CINEVERSE
+            CINEVERSE
         </div>
+
 
         <p>
             Explore novos filmes e encontre sua próxima história.
         </p>
+
 
         <span>
             © 2026 Cineverse
         </span>
 
     </footer>
+
 
 
     <script src="js/script.js"></script>
