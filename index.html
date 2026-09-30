@@ -50,8 +50,6 @@
         </nav>
 
 
-        <!-- PESQUISA -->
-
         <div class="search">
 
             <input
@@ -74,14 +72,14 @@
 
 
     <!-- =========================
-         CONTEÚDO PRINCIPAL
+         CONTEÚDO
     ========================== -->
 
     <main>
 
 
         <!-- =========================
-             HERO / DESTAQUE
+             FILME EM DESTAQUE
         ========================== -->
 
         <section
@@ -96,36 +94,38 @@
                 </span>
 
 
-                <h1>
+                <h1 id="featuredTitle">
                     Interestelar
                 </h1>
 
 
                 <div class="hero-info">
 
-                    <span>
+                    <span id="featuredYear">
                         2014
                     </span>
 
-                    <span>
+                    <span id="featuredRating">
                         ★ 8.7
                     </span>
 
-                    <span>
+                    <span id="featuredGenre">
                         Ficção Científica
                     </span>
 
                 </div>
 
 
-                <p>
-                    Uma equipe de exploradores atravessa um buraco
-                    de minhoca em busca de um novo lar para a humanidade.
+                <p id="featuredDescription">
+                    Uma equipe de exploradores atravessa um
+                    buraco de minhoca em busca de um novo lar
+                    para a humanidade.
                 </p>
 
 
                 <a
                     href="filmes/interestelar.html"
+                    id="featuredLink"
                     class="primary-button"
                 >
                     Ver detalhes
@@ -133,11 +133,47 @@
 
             </div>
 
+
+            <!-- INDICADORES -->
+
+            <div
+                class="featured-dots"
+                id="featuredDots"
+            >
+
+                <button
+                    class="active"
+                    data-slide="0"
+                    aria-label="Destaque 1"
+                ></button>
+
+                <button
+                    data-slide="1"
+                    aria-label="Destaque 2"
+                ></button>
+
+                <button
+                    data-slide="2"
+                    aria-label="Destaque 3"
+                ></button>
+
+                <button
+                    data-slide="3"
+                    aria-label="Destaque 4"
+                ></button>
+
+                <button
+                    data-slide="4"
+                    aria-label="Destaque 5"
+                ></button>
+
+            </div>
+
         </section>
 
 
         <!-- =========================
-             CATÁLOGO DE FILMES
+             CATÁLOGO
         ========================== -->
 
         <section
@@ -146,9 +182,6 @@
         >
 
             <div class="section-title">
-
-
-                <!-- TÍTULO -->
 
                 <div>
 
@@ -162,8 +195,6 @@
 
                 </div>
 
-
-                <!-- FILTRO DE GÊNERO -->
 
                 <select id="genreFilter">
 
@@ -200,15 +231,11 @@
             </div>
 
 
-            <!-- MENSAGEM DA PESQUISA -->
-
             <p
                 id="resultMessage"
                 class="result-message"
             ></p>
 
-
-            <!-- FILMES GERADOS PELO JAVASCRIPT -->
 
             <div
                 id="movieGrid"
@@ -239,31 +266,25 @@
 
             <div class="genres">
 
-
                 <button data-genre="Ação">
                     Ação
                 </button>
-
 
                 <button data-genre="Romance">
                     Romance
                 </button>
 
-
                 <button data-genre="Ficção Científica">
                     Ficção Científica
                 </button>
-
 
                 <button data-genre="Terror">
                     Terror
                 </button>
 
-
                 <button data-genre="Animação">
                     Animação
                 </button>
-
 
                 <button data-genre="Comédia">
                     Comédia
@@ -286,11 +307,9 @@
             CINEVERSE
         </div>
 
-
         <p>
             Explore novos filmes e encontre sua próxima história.
         </p>
-
 
         <span>
             © 2026 Cineverse
@@ -298,8 +317,6 @@
 
     </footer>
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="js/script.js"></script>
 
